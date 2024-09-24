@@ -31,7 +31,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
                         val quantidadeText = etQuantidade.text.toString().trim()
 
             if (nome.isEmpty() || categoria.isEmpty() || precoText.isEmpty() || quantidadeText.isEmpty()) {
-                Toast.makeText(this, "Todos os campos são obrigatórios.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Preencha todos os campos!.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -39,15 +39,15 @@ class CadastroProdutoActivity : AppCompatActivity() {
             val quantidade = quantidadeText.toIntOrNull()
 
             if (preco == null || quantidade == null) {
-                Toast.makeText(this, "Preço e Quantidade devem ser numéricos.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Preço e Quantidade devem ser preenchidos em formato numérico.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
             }
             if (preco < 0) {
-                Toast.makeText(this, "O preço não pode ser menor que 0.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "O preço não deve ser negativo ou menor que 0.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
             }
             if (quantidade < 1) {
-                Toast.makeText(this, "A quantidade deve ser pelo menos 1.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Quantidadem minima de 1.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
             }
 
